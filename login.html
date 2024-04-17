@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessTracker</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .form-container {
+            display: none; /* Hide all forms by default */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .active-form {
+            display: block; /* Show the active form */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-container button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="toggle-parent">
+            <div class="toggle-container">
+                <button id="loginToggle">Login</button>
+                <button id="signupToggle">Sign Up</button>
+            </div>
+        </div>
+        
+        <div class="form-container login-form active-form" id="loginForm">
+            <h2>Login</h2>
+            <form>
+                <input type="text" class="username" placeholder="Username" required>
+                <input type="password" class="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <div class="form-container signup-form" id="signupForm">
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" class="username" placeholder="Username" required>
+                <input type="password" class="password" placeholder="Password" required>
+                <input type="password" class="confirm-password" placeholder="Confirm Password" required>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Add your JavaScript code here
+        const loginToggle = document.getElementById('loginToggle');
+        const signupToggle = document.getElementById('signupToggle');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+
+        loginToggle.addEventListener('click', function() {
+            loginForm.classList.add('active-form');
+            signupForm.classList.remove('active-form');
+        });
+
+        signupToggle.addEventListener('click', function() {
+            signupForm.classList.add('active-form');
+            loginForm.classList.remove('active-form');
+        });
+
+        document.querySelector('.login-form form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.querySelector('.login-form .username').value;
+            const password = document.querySelector('.login-form .password').value;
+            // Implement login functionality here
+            console.log('Login:', username, password);
+        });
+
+        document.querySelector('.signup-form form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.querySelector('.signup-form .username').value;
+            const password = document.querySelector('.signup-form .password').value;
+            const confirmPassword = document.querySelector('.signup-form .confirm-password').value;
+            // Implement signup functionality here
+            console.log('Signup:', username, password, confirmPassword);
+        });
+    </script>
+</body>
+</html>
