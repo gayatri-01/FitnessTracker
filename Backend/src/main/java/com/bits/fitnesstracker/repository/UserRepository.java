@@ -1,6 +1,7 @@
 package com.bits.fitnesstracker.repository;
 
 import com.bits.fitnesstracker.model.User;
+import com.mongodb.client.result.UpdateResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -21,14 +22,14 @@ public class UserRepository {
         return mongoTemplate.findOne(Query.query(Criteria.where("_id").is(username)), User.class);
     }
 
-    public void updateUser(String username, Map<String, Object> changedFields) {
+    public UpdateResult updateUser(String username, Map<String, Object> changedFields) {
         Query query = new Query(Criteria.where("_id").is(username));
         Update update = new Update();
         // Set only the fields that are present in the changedFields map
         for (Map.Entry<String, Object> entry : changedFields.entrySet()) {
             update.set(entry.getKey(), entry.getValue());
         }
-        mongoTemplate.updateFirst(query, update, User.class);
+        return mongoTemplate.updateFirst(query, update, User.class);
     }
 
     public void saveUser(User user) {
