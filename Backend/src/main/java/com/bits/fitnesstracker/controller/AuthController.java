@@ -4,7 +4,6 @@ import com.bits.fitnesstracker.model.request.LoginRequest;
 import com.bits.fitnesstracker.model.request.RegisterRequest;
 import com.bits.fitnesstracker.model.response.AuthResponse;
 import com.bits.fitnesstracker.service.AuthService;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,8 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")

@@ -1,7 +1,5 @@
 package com.bits.fitnesstracker.controller;
 
-
-import com.bits.fitnesstracker.model.User;
 import com.bits.fitnesstracker.model.WorkoutPlan;
 import com.bits.fitnesstracker.model.response.Response;
 import com.bits.fitnesstracker.service.WorkoutService;
@@ -32,7 +30,7 @@ public class WorkoutController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Workout Plan fetched successfully"),
             @ApiResponse(responseCode = "500", description = "Exception while fetching Workout Plan")})
-    public ResponseEntity<Response<List<WorkoutPlan>>> getUserProfile(@RequestParam @Parameter(description = "Gender of the user", example = "female") String gender,
+    public ResponseEntity<Response<List<WorkoutPlan>>> getWorkoutPlans(@RequestParam @Parameter(description = "Gender of the user", example = "female") String gender,
                                                                       @RequestParam @Parameter(description = "Weight of the user", example = "55") int weight) {
         return ResponseEntity.ok(workoutService.getWorkoutPlan(gender,weight));
     }
