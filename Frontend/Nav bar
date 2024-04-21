@@ -1,47 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Navigation Bar</title>
-	<style type="text/css">
-		*{
-			text-decoration: none;
-		}
-		.navbar{
-			background: crimson; font-family: calibri; padding-right: 15px;padding-left: 15px;
-		}
-		.navdiv{
-			display: flex; align-items: center; justify-content: space-between;
-		}
-		.logo a{
-			font-size: 35px; font-weight: 600; color: white;
-		}
-		li{
-			list-style: none; display: inline-block;
-		}
-		li a{
-			color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
-		}
-		button{
-			background-color: black; margin-left: 10px; border-radius: 10px; padding: 10px; width: 90px;
-		}
-		button a{
-			color: white; font-weight: bold; font-size: 15px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #ffe456;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .feature-card {
+            border: 5px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+
+        .feature-card h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
+
 <body>
-	<nav class="navbar">
-		<div class="navdiv">
-			<div class="logo"><a href="#">Fitness tracker</a> </div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-				<button><a href="#">SignIn</a></button>
-				<button><a href="#">SignUp</a></button>
-			</ul>
-		</div>
-	</nav>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Logo</a></li>
+                <li><a href="#">Feature 1</a></li>
+                <li><a href="#">Feature 2</a></li>
+                <li><a href="#">Feature 3</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="feature-card">
+            <h2>Feature 1</h2>
+            <p>Description of feature 1.</p>
+            <a href="feature1.html">Read more</a>
+        </div>
+        <div class="feature-card">
+            <h2>Feature 2</h2>
+            <p>Description of feature 2.</p>
+            <a href="feature2.html">Read more</a>
+        </div>
+        <div class="feature-card">
+            <h2>Feature 3</h2>
+            <p>Description of feature 3.</p>
+            <a href="feature3.html">Read more</a>
+        </div>
+    </div>
 </body>
+
+</html>
