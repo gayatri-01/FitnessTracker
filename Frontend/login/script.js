@@ -40,10 +40,10 @@ document.querySelector('.form-container-login form').addEventListener('submit', 
                 if (data.status=='200') {
                     // Login successful, handle redirection or token storage
                     console.log('Login successful:', data.message);
-                    // (Your logic for successful login)
-                    window.location.href = 'http://localhost:63342/FitnessTracker/FitnessTrackerAssignment/Frontend/profile/profile.html';
-                    sessionStorage.setItem('token', token);
+                    // (Your logic for successful login)                    
+                    sessionStorage.setItem('token', data.token);
                     sessionStorage.setItem('username', username);
+                    window.location.href = 'http://localhost:52000/profile/profile.html';
                 } else {
                     // Login failed, display error message
                     console.error('Login failed:', data.message);
