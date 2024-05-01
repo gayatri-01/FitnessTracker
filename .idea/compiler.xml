@@ -9,6 +9,13 @@
         </processorPath>
         <module name="fitnesstracker.main" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="com.bits.fitnesstracker.main" />
+      </profile>
     </annotationProcessing>
   </component>
 </project>

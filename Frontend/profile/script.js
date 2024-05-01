@@ -4,12 +4,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordInput = document.getElementById('password');
     const updateBtn = document.getElementById('updateBtn');
 
-    // Need to change, this data we will get after the post request to load user profile 
+    // Need to change, this data we will get after the post request to load user profile
+    const token = sessionStorage.getItem('token');
+    const username = sessionStorage.getItem('username');
     let originalData = {
-        name: 'Lorem Ipsum',
-        email: 'lorem.ipsum@example.com',
-        password: 'password123'
-    };
+            name: username,
+            email: ' ',
+            password: '1241'
+            };
+
+    fetch('http://localhost:42000/api/user/${username}', {
+                                method: 'GET',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                            console.log(data);
+                                if (data.status=='200') {
+                                console.log('Profile page');
+                                originalData.name = data.results.name;
+                                originalData.email = data.results.email;
+                                originalData.password = data.results.password;
+                                } else {
+                                    console.error('Get Profile failed:', data.message);
+                                    }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error:', error);
+                                        });
+
 
     // Function to compare original data with new data
     function hasChanged() {
@@ -36,13 +62,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for update button
     updateBtn.addEventListener('click', function() {
-        // Here you can implement the code to update the profile data
+        if (!hasChanged()) {
+                    return; // No changes, nothing to update
+                }
+
+                const updatedData = {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    password: passwordInput.value
+                };
+                fetch('http://localhost:42000/api/user/${username}', {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            body: JSON.stringify(updatedData)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                                    if (data.status=='200') {
+                                        console.log('Profile updated successfully:', data.message);
+                                        originalData = updatedData;
+                                        updateBtn.setAttribute('disabled', true);
+                                    } else {
+                                        console.error('Profile update failed:', data.message);
+                                    }
+                                })
+                                .catch(error => {
+                                            console.error('Error:', error);
+                                        });
         console.log('Updated Profile Data');
-        // Update original data with new data
-        originalData.name = nameInput.value;
-        originalData.email = emailInput.value;
-        originalData.password = passwordInput.value;
-        // Disable update button after updating
         updateBtn.setAttribute('disabled', true);
     });
 });
