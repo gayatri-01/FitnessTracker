@@ -4,12 +4,17 @@ const stepsInput = document.getElementById('steps');
 const caloriesInput = document.getElementById('calories');
 const logButton = document.getElementById('log-btn');
 
+const nonNegativeIntegerPattern = /^(0|[1-9]\d*)$/;
+
 function toggleLogButton() {
     if (
         dateInput.value.trim() !== '' &&
         durationInput.value.trim() !== '' &&
         stepsInput.value.trim() !== '' &&
-        caloriesInput.value.trim() !== ''
+        caloriesInput.value.trim() !== '' &&
+        nonNegativeIntegerPattern.test(durationInput.value) &&
+        nonNegativeIntegerPattern.test(stepsInput.value.trim()) &&
+        nonNegativeIntegerPattern.test(caloriesInput.value.trim())
     ) {
         logButton.disabled = false;
     } else {
