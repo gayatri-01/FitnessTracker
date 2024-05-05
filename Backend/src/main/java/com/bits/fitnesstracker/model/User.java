@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class User {
 
     @Id
@@ -19,5 +20,6 @@ public class User {
     private String email;
     private String password;
     private String role;
-
+    private int stepsGoal;
+    private double caloriesGoal;
 }

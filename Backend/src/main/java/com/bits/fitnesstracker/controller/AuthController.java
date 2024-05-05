@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST})
 @Tag(name = "AuthController", description = "JWT Tokens are used for Security\n" +
         "You will get token in response from the register/login APIs.\n" +
         "Store it in local or session storage to be used later for User Operations")

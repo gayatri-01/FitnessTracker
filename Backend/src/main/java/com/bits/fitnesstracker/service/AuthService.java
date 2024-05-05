@@ -38,6 +38,8 @@ public class AuthService {
         user.setPassword(new BCryptPasswordEncoder().encode(userRequest.getPassword()));
         user.setRole("USER");
         user.setUsername(userRequest.getUsername());
+        user.setStepsGoal(userRequest.getStepsGoal());
+        user.setCaloriesGoal(userRequest.getCaloriesGoal());
         userRepository.saveUser(user);
         UserDetails userDetails = userDetailsService.createUserDetails(userRequest.getUsername(), user.getPassword());
         String token = jwtTokenUtil.generateToken(userDetails);

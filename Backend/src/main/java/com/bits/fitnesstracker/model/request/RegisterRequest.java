@@ -11,4 +11,6 @@ public class RegisterRequest {
     String name;
     String email;
     String password;
+    int stepsGoal;
+    double caloriesGoal;
 }

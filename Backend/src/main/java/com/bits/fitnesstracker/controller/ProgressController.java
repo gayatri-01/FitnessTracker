@@ -1,8 +1,8 @@
 package com.bits.fitnesstracker.controller;
 
-import com.bits.fitnesstracker.model.WorkoutPlan;
+import com.bits.fitnesstracker.model.Progress;
 import com.bits.fitnesstracker.model.response.Response;
-import com.bits.fitnesstracker.service.WorkoutService;
+import com.bits.fitnesstracker.service.ProgressService;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -12,28 +12,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("api/workout")
+@RequestMapping("api/progress")
 @SecurityRequirement(name = "jwtAuth")
 @CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET})
-@Tag(name = "WorkoutController", description = "This is a protected API. Send Authorization Header\n" +
+@Tag(name = "ProgressController", description = "This is a protected API. Send Authorization Header\n" +
         "Example:\n" +
         "HeaderKey: \"Authorization\"\n" +
         "HeaderValue: \"Bearer TOKEN_VALUE\"")
-public class WorkoutController {
+public class ProgressController {
 
     @Autowired
-    WorkoutService workoutService;
+    ProgressService progressService;
 
-    @GetMapping("/workoutPlan")
+    @GetMapping
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Workout Plan fetched successfully"),
-            @ApiResponse(responseCode = "500", description = "Exception while fetching Workout Plan")})
-    public ResponseEntity<Response<List<WorkoutPlan>>> getWorkoutPlans(@RequestParam @Parameter(description = "Gender of the user", example = "female") String gender,
-                                                                      @RequestParam @Parameter(description = "Weight of the user", example = "55") int weight) {
-        return ResponseEntity.ok(workoutService.getWorkoutPlan(gender,weight));
+            @ApiResponse(responseCode = "200", description = "Progress fetched successfully"),
+            @ApiResponse(responseCode = "500", description = "Exception while fetching Progress")})
+    public ResponseEntity<Response<Progress>> getProgress(@RequestParam @Parameter(example = "gayatri01") String username) {
+        return ResponseEntity.ok(progressService.getProgress(username));
     }
 
     @ExceptionHandler(Exception.class)
