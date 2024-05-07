@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
+    const caloriesInput = document.getElementById("calories");
+    const stepsInput = document.getElementById("steps");
     const updateBtn = document.getElementById("updateBtn");
 
     // Need to change, this data we will get after the post request to load user profile
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "",
         email: "",
         password: "",
+        caloriesInput: "",
+        stepsInput: "",
     };
 
     fetch("http://localhost:42000/api/user/" + username, {
@@ -50,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return (
             nameInput.value !== originalData.name ||
             emailInput.value !== originalData.email ||
-            passwordInput.value !== originalData.password
+            passwordInput.value !== originalData.password ||
+            caloriesInput.value !== originalData.caloriesInput ||
+            stepsInput.value !== originalData.stepsInput
         );
     }
 
@@ -69,6 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
     nameInput.addEventListener("input", toggleUpdateButton);
     emailInput.addEventListener("input", toggleUpdateButton);
     passwordInput.addEventListener("input", toggleUpdateButton);
+    caloriesInput.addEventListener("input", toggleUpdateButton);
+    stepsInput.addEventListener("input", toggleUpdateButton);
 
     // Event listener for update button
     updateBtn.addEventListener("click", function () {

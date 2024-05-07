@@ -1,8 +1,14 @@
-body {
+.container {
     display: flex;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    background-color: #e0e0e0;
+    flex-direction: column;
+    width: 500px;
+    margin: 100px auto 0;
+    gap: 30px;
+
+
+    .logo {
+        text-align: center;
+    }
 }
 
 .form-container {
@@ -10,8 +16,6 @@ body {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    width: 300px;
-
 }
 
 .active-form {
@@ -46,7 +50,6 @@ input[type="submit"]:hover {
     display: flex;
     text-align: center;
     cursor: pointer;
-    margin-top: 100px;
 }
 
 .toggle-tab {
