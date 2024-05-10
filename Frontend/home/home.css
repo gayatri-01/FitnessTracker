@@ -1,14 +1,41 @@
-.feature-card {
-    border: 5px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    width: 20%;
-    vertical-align: top;
-    box-sizing: border-box;
-}
+.feature-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.6rem;
 
-.feature-card h2 {
-    margin-top: 0;
+    @media screen and (min-width: 960px) {
+        flex-direction: row;
+    }
+
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1.6rem;    
+        gap: 1.6rem;
+        border: 0.5rem solid #ccc;
+        border-radius: 0.8rem;
+        box-sizing: border-box;
+        text-align: center;
+        align-items: center;
+
+        .feature-card--title {
+            font-size: 2rem;
+            color: #03A9F4;
+        }
+
+        .feature-card--image {
+            display: block;
+
+            img {
+                width: auto;
+                height: 8rem;
+
+                @media screen and (min-width: 600px) {
+                    height: 10rem;
+                }
+            }    
+        }
+    }
 }

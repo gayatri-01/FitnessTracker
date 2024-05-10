@@ -1,35 +1,120 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-}
+    padding: 1.6rem 2.4rem;
+    margin-right: calc(-1 * (100vw - 100%));
 
-nav {
-    color: #ffe456;
-    padding: 10px;
-}
+    nav {
+        background-color: #FFFFFF;
+        margin: 1.6rem auto 2.4rem;
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            gap: 2.4rem;
+    
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+            ul {
+                display: flex;
+                gap: 1.6rem;
+                align-items: center;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+        
+                li {
+                    display: flex;
+        
+                    a {
+                        font-size: 1.2rem;
+                        text-decoration: none;
+                        color: #03A9F4;
+                        transition: color 0.3s ease;
+                    }
 
-nav ul li a {
-    text-decoration: none;
-}
+                    a:hover {
+                        color: #2C3E50;
+                    }
+                }
+            }
 
-.navbar-container {
-    margin: 20px auto;
-    text-align: center;
+            .logo img{
+                height: 4rem;
+                width: auto;
+            }
+        }
+    }
 
-    .logo img{
-        height: 40px;
-        width: auto;
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 50rem;
+        gap: 1.6rem;
+        margin: 0 auto;
+        padding: 1.6rem;
+        background-color: #fff;
+        border: 0.5rem solid #ccc;
+        border-radius: 0.8rem;
+    
+        .container-title {
+            font-size: 1.8rem;
+            color: #03A9F4;
+            text-align: center;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+    
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+    
+                input {
+                    padding: 0.8rem;
+                    border-radius: 0.8rem;
+                    border: 0.1rem solid #ccc;
+                }
+
+                input[disabled] {
+                    cursor: not-allowed;
+                }
+    
+                label {
+                    display: block;
+                }        
+            }
+        }
+    }
+
+    .button {
+        display: block;
+        align-self: center;
+        width: 10rem;
+        padding: 0.8rem;
+        border: unset;
+        border-radius: 0.8rem;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #03A9F4;
+        text-decoration: unset;
+
+        @media screen and (min-width: 600px) {
+            width: 15rem;
+        }
+    }
+    
+    .button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    
+    .button:hover:not(:disabled) {
+        background-color: #2C3E50;
+        cursor: pointer;
     }
 }

@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="../global/css/global.css">
 </head>
 <body>
     <nav>
         <div class="navbar-container">
+            <div class="logo"><a href="../home/home.html"><img src="../global/images/logo.png"> </a></div>
             <ul>
-                <li class="logo"><a href="../home/home.html"><img src="../global/images/logo.png"> </a></li>
                 <li><a href="../home/home.html">Home</a></li>
                 <li><a href="../logger/logger.html">Logger</a></li>
                 <li><a href="../planner/planner.html">Planner</a></li>
@@ -21,28 +20,40 @@
         </div>
     </nav>
 
-    <div class="profile-container">
-        <h1>User Profile</h1>
-        <div class="form-container">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Username" disabled>
+    <div class="container">
+        <div class="container-title">User Profile</div>
+        <form class="form-container">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Username" disabled>
+            </div>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your name">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password">
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
 
-            <label for="calories">Calories Goal:</label>
-            <input type="number" id="calories" placeholder="Enter calories goal">
+            <div class="form-group">
+                <label for="calories">Calories Goal:</label>
+                <input type="number" id="calories" placeholder="Enter calories goal">
+            </div>
 
-            <label for="steps">Step Goal:</label>
-            <input type="number" id="steps" placeholder="Enter step goal">
+            <div class="form-group">
+                <label for="steps">Step Goal:</label>
+                <input type="number" id="steps" placeholder="Enter step goal">
+            </div>
 
-            <div id="updateBtn" class="button-update" disabled>Update Profile</div>
+            <button type="submit" id="updateBtn" class="button button-update" disabled>Update Profile</div>
         </div>
     </div>
 

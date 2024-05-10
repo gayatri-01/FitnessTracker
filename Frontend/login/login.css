@@ -1,71 +1,47 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin: 100px auto 0;
-    gap: 30px;
+body {
+    .container.login-container {
+        background-color: #2C3E50;
+        border: 0.5rem solid #000;
 
+        .logo {
+            align-self: center;
+        }
 
-    .logo {
-        text-align: center;
+        .toggle-container {
+            display: flex;
+            text-align: center;
+            cursor: pointer;
+
+            .toggle-tab {
+                flex: 1;
+                font-size: 1.4rem;
+                padding: 1rem;
+                border-radius: 0.8rem 0.8rem 0 0;
+                color: #fff;
+            }
+            
+            .toggle-tab.active-tab {
+                background-color: #fff;
+                color: #03A9F4;
+            }
+        }
+
+        .form-container {
+            display: none;
+            background-color: #fff;
+            padding: 1.6rem
+        }
+        
+        .form-container.active-form {
+            display: block;
+        }
+        
+        .form-container-login.active-form {
+            border-radius: 0 0.8rem 0.8rem 0.8rem;
+        }
+        
+        .form-container-signup.active-form {
+            border-radius: 0.8rem 0 0.8rem 0.8rem;
+        }
     }
-}
-
-.form-container {
-    display: none;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.active-form {
-    display: block;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-container input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type="submit"] {
-    background-color: #42a5f5;
-    color: #fff;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #007bff;
-}
-
-.toggle-container {
-    display: flex;
-    text-align: center;
-    cursor: pointer;
-}
-
-.toggle-tab {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px 8px 0 0;
-}
-
-.toggle-tab.active-tab {
-    background-color: white
-}
-
-.form-container-login.active-form {
-    border-radius: 0 8px 8px 8px;
-}
-
-.form-container-signup.active-form {
-    border-radius: 8px 0 8px 8px;
 }

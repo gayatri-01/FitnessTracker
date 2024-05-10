@@ -1,0 +1,44 @@
+body {
+    .graph-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        align-items: center;
+
+        .graph-container-title {
+            font-size: 1.8rem;
+            color: #03A9F4;
+            text-align: center;
+        }
+
+        .bar-graph-container {
+            flex-direction: column;
+
+            canvas{
+                width:auto !important;
+                height:30rem !important;
+            }
+        }
+
+        .donut-graph-container {
+            flex-direction: row;
+
+            .donut-graph {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                canvas{
+                    width:auto !important;
+                    height:30rem !important;
+                }
+            }
+        }
+
+        .donut-graph-container, .bar-graph-container {
+            display: flex;
+            gap: 3.2rem;
+        }
+    }
+}
