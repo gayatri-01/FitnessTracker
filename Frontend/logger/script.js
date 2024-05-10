@@ -28,6 +28,7 @@ stepsInput.addEventListener('input', toggleLogButton);
 caloriesInput.addEventListener('input', toggleLogButton);
 
 // Function to log entry using fetch API
+const token = sessionStorage.getItem("token");
 function logEntry() {
   const data = {
     date: dateInput.value,
@@ -38,7 +39,8 @@ function logEntry() {
   fetch('http://localhost:42000/api/activity', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(data)
     })

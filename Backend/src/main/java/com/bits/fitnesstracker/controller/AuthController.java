@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
         "You will get token in response from the register/login APIs.\n" +
         "Store it in local or session storage to be used later for User Operations")
 public class AuthController {
-    
+
     @Autowired
     AuthService authService;
 

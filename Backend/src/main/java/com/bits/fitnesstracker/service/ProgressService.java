@@ -60,6 +60,7 @@ public class ProgressService {
         progress.setStepsDoughNutChart(List.of(normalizedStepsCompleted,100-normalizedStepsCompleted));
         progress.setCaloriesDoughNutChart(List.of(normalizedCaloriesBurnt,100-normalizedCaloriesBurnt));
 
+
         return Response.<Progress>builder().status(HttpStatus.OK.value()).message("Progress fetched successfully").results(progress).build();
 
     }
