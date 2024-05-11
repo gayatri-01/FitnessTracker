@@ -20,9 +20,11 @@
         </div>
     </nav>
 
+    <div class="toaster" id="toaster">Workout Plans Fetched successfully!</div>
+
     <div class="container">
-        <div class="container-title">Get workout plans</div>
-        <form id="tracker-form">
+        <div class="container-title">Get Workout Plans</div>
+        <form id="planner-form">
             <div class="form-group">
                 <label for="weight">Weight:</label>
                 <input type="number" id="weight" name="weight" required>
@@ -45,7 +47,21 @@
         </form>
     </div>
 
-    <div class="planner-table"></div>
+    <br/>
+
+    <div class="container" id="plan-container" style="display: none;">
+        <div class="container-title">Workout Plans for you!</div>
+        <br/>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
     <script src="script.js"></script>
 </body>

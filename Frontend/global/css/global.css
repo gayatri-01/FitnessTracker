@@ -14,7 +14,7 @@ body {
             text-align: center;
             align-items: center;
             gap: 2.4rem;
-    
+
 
             ul {
                 display: flex;
@@ -23,10 +23,10 @@ body {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-        
+
                 li {
                     display: flex;
-        
+
                     a {
                         font-size: 1.2rem;
                         text-decoration: none;
@@ -40,7 +40,7 @@ body {
                 }
             }
 
-            .logo img{
+            .logo img {
                 height: 4rem;
                 width: auto;
             }
@@ -57,23 +57,23 @@ body {
         background-color: #fff;
         border: 0.5rem solid #ccc;
         border-radius: 0.8rem;
-    
+
         .container-title {
             font-size: 1.8rem;
             color: #03A9F4;
             text-align: center;
         }
-    
+
         form {
             display: flex;
             flex-direction: column;
             gap: 1.6rem;
-    
+
             .form-group {
                 display: flex;
                 flex-direction: column;
                 gap: 0.8rem;
-    
+
                 input {
                     padding: 0.8rem;
                     border-radius: 0.8rem;
@@ -83,10 +83,10 @@ body {
                 input[disabled] {
                     cursor: not-allowed;
                 }
-    
+
                 label {
                     display: block;
-                }        
+                }
             }
         }
     }
@@ -107,14 +107,52 @@ body {
             width: 15rem;
         }
     }
-    
+
     .button:disabled {
         background-color: #ccc;
         cursor: not-allowed;
     }
-    
+
     .button:hover:not(:disabled) {
         background-color: #2C3E50;
         cursor: pointer;
     }
+
+    .toaster {
+        position: fixed;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      thead {
+        background-color: #f2f2f2;
+      }
+      
+      th, td {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        text-align: left;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      
+      tr:hover {
+        background-color: #f2f2f2;
+      }
+      
+
 }

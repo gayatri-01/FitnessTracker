@@ -43,7 +43,7 @@ document.querySelector('.form-container-login form').addEventListener('submit', 
                     // (Your logic for successful login)                    
                     sessionStorage.setItem('token', data.token);
                     sessionStorage.setItem('username', username);
-                    window.location.href = '../profile/profile.html';
+                    window.location.href = '../home/home.html';
                 } else {
                     // Login failed, display error message
                     console.error('Login failed:', data.message);

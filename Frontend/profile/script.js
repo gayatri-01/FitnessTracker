@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "",
         email: "",
         password: "",
-        caloriesInput: "",
-        stepsInput: "",
+        caloriesGoal: "",
+        stepsGoal: "",
     };
 
     fetch("http://localhost:42000/api/user/" + username, {
@@ -35,11 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 originalData.name = data.results.name;
                 originalData.email = data.results.email;
                 originalData.password = data.results.password;
+                originalData.caloriesGoal = data.results.caloriesGoal;
+                originalData.stepsGoal = data.results.stepsGoal;
 
                 usernameInput.value = originalData.username;
                 nameInput.value = originalData.name;
                 emailInput.value = originalData.email;
                 passwordInput.value = originalData.password;
+                caloriesInput.value = originalData.caloriesGoal;
+                stepsInput.value = originalData.stepsGoal;
+
             } else {
                 console.error("Get Profile failed:", data.message);
             }
@@ -55,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
             nameInput.value !== originalData.name ||
             emailInput.value !== originalData.email ||
             passwordInput.value !== originalData.password ||
-            caloriesInput.value !== originalData.caloriesInput ||
-            stepsInput.value !== originalData.stepsInput
+            caloriesInput.value !== originalData.caloriesGoal ||
+            stepsInput.value !== originalData.stepsGoal
         );
     }
 
@@ -88,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: nameInput.value,
             email: emailInput.value,
             password: passwordInput.value,
+            stepsGoal: stepsInput.value,
+            caloriesGoal: caloriesInput.value
         };
         fetch("http://localhost:42000/api/user/" + username, {
             method: "PUT",
