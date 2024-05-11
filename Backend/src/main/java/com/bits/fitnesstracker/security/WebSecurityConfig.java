@@ -69,12 +69,11 @@ public class WebSecurityConfig {
             //Set Authorization Policies
             .authorizeHttpRequests(
                                 //Permit all requests to Auth & Swagger Endpoints
-                    auth -> auth.requestMatchers("/api/auth/**").permitAll()
+                    auth -> auth.requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/v3/api-docs/**",
                                         "/swagger-resources/**",
                                         "/swagger-resources",
-                                        "/swagger-ui/**",
-                                        "/api/progress/**").permitAll()
+                                        "/swagger-ui/**").permitAll()
                                 //Require authentication for all other endpoints
                                 .anyRequest().authenticated()
             )

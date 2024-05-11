@@ -38,7 +38,7 @@ const token = sessionStorage.getItem("token");
 populateActivities();
 
 function populateActivities() {
-  fetch('http://localhost:42000/api/activity?username=' + sessionStorage.getItem("username"), {
+  fetch('http://localhost:42000/activities?username=' + sessionStorage.getItem("username"), {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ form.addEventListener('submit', (event) => {
   };
   console.log(data);
 
-  fetch('http://localhost:42000/api/activity', {
+  fetch('http://localhost:42000/activities', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

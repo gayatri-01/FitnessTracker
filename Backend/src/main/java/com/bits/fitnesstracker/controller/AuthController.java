@@ -16,7 +16,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("auth")
 @CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST})
 @Tag(name = "AuthController", description = "JWT Tokens are used for Security\n" +
         "You will get token in response from the register/login APIs.\n" +

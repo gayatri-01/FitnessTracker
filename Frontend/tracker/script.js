@@ -1,6 +1,6 @@
 const token = sessionStorage.getItem("token");
 const username = sessionStorage.getItem("username");
-fetch("http://localhost:42000/api/progress?username=" + username, {
+fetch("http://localhost:42000/progress?username=" + username, {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ document.querySelector('.form-container-login form').addEventListener('submit', 
     const username = document.querySelector('.form-container-login .username').value;
     const password = document.querySelector('.form-container-login .password').value;
     // Implement login functionality here
-    fetch('http://localhost:42000/api/auth/login', {
+    fetch('http://localhost:42000/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ document.querySelector('.form-container-signup form').addEventListener('submit',
     const email = document.querySelector('.form-container-signup .email').value;
     //const confirmPassword = document.querySelector('.form-container-signup .confirm-password').value;
     // Implement signup functionality here
-       fetch('http://localhost:42000/api/auth/register', {
+       fetch('http://localhost:42000/auth/register', {
                method: 'POST',
                headers: {
                    'Content-Type': 'application/json'

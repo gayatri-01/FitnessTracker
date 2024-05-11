@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("users")
 @CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
 @SecurityRequirement(name = "jwtAuth")
 @Tag(name = "UserController", description = "This is a protected API. Send Authorization Header\n" +
@@ -46,7 +46,7 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Profile updated successfully"),
             @ApiResponse(responseCode = "204", description = "No matches found to update or No modifications required"),
             @ApiResponse(responseCode = "500", description = "Exception while updating profile")})
-    public ResponseEntity<Response<String>> updateUserProfile(@PathVariable String username, @org.springframework.web.bind.annotation.RequestBody @RequestBody(content = @Content(mediaType = "application/json", examples = {
+    public ResponseEntity<Response<String>> updateUserProfile(@PathVariable @Parameter(description = "username of the user", example = "gayatri01")  String username, @org.springframework.web.bind.annotation.RequestBody @RequestBody(content = @Content(mediaType = "application/json", examples = {
             @ExampleObject(name = "example1", value = "{\"email\": \"new_email@gmail.com\"}"),
             @ExampleObject(name = "example2", value = "{\n" +
                     "    \"email\": \"new_email@gmail.com\",\n" +

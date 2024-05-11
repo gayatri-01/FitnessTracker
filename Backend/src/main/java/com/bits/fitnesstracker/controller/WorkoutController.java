@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/workout")
+@RequestMapping("workout")
 @SecurityRequirement(name = "jwtAuth")
 @CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET})
 @Tag(name = "WorkoutController", description = "This is a protected API. Send Authorization Header\n" +
@@ -27,7 +27,7 @@ public class WorkoutController {
     @Autowired
     WorkoutService workoutService;
 
-    @GetMapping("/workoutPlan")
+    @GetMapping("/workoutPlans")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Workout Plan fetched successfully"),
             @ApiResponse(responseCode = "500", description = "Exception while fetching Workout Plan")})

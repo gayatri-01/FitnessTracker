@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         stepsGoal: "",
     };
 
-    fetch("http://localhost:42000/api/user/" + username, {
+    fetch("http://localhost:42000/users/" + username, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stepsGoal: stepsInput.value,
             caloriesGoal: caloriesInput.value
         };
-        fetch("http://localhost:42000/api/user/" + username, {
+        fetch("http://localhost:42000/users/" + username, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

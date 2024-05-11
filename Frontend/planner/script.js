@@ -49,7 +49,7 @@ form.addEventListener('submit', (event) => {
   const weight = weightInput.value.trim();
   const gender = document.querySelector('input[name="gender"]:checked').value;
   const token = sessionStorage.getItem("token");
-  fetch("http://localhost:42000/api/workout/workoutPlan?gender=" + gender + "&weight=" + weight, {
+  fetch("http://localhost:42000/workout/workoutPlans?gender=" + gender + "&weight=" + weight, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

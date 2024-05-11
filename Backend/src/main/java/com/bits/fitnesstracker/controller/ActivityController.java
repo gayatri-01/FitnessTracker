@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("api/activity")
+@RequestMapping("activities")
 @SecurityRequirement(name = "jwtAuth")
 @CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST})
 @Tag(name = "ActivityController", description = "This is a protected API. Send Authorization Header\n" +
@@ -32,8 +32,8 @@ public class ActivityController {
 
     @GetMapping
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Activity Plans fetched successfully"),
-            @ApiResponse(responseCode = "500", description = "Exception while fetching Activity Plans")})
+            @ApiResponse(responseCode = "200", description = "Activities fetched successfully"),
+            @ApiResponse(responseCode = "500", description = "Exception while fetching Activities")})
     public ResponseEntity<Response<List<Activity>>> getActivities(@RequestParam @Parameter(example = "gayatri01") String username){
         return ResponseEntity.ok(activityService.getLatestActivities(username));
     }
@@ -43,7 +43,13 @@ public class ActivityController {
             @ApiResponse(responseCode = "200", description = "Activity saved successfully"),
             @ApiResponse(responseCode = "500", description = "Exception while saving activity")})
     public ResponseEntity<Response<String>> saveActivity(@org.springframework.web.bind.annotation.RequestBody @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @Content(mediaType = "application/json", examples = {
-            @ExampleObject(name = "example1", value = "{\"email\": \"new_email@gmail.com\"}")
+            @ExampleObject(name = "example1", value = "{\n" +
+                    "  \"username\" : \"gayatri01\",\n" +
+                    "  \"date\": \"2024-05-11\",\n" +
+                    "  \"duration\": 45,\n" +
+                    "  \"steps\": 100,\n" +
+                    "  \"caloriesBurnt\": 200.4\n" +
+                    "}")
     }) ) Map<String, Object> activity) {
         return ResponseEntity.ok(activityService.saveActivity(activity));
     }
