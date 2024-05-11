@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/progress")
-@CrossOrigin(origins = "http://localhost:63342", methods = {RequestMethod.GET})
+@CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET})
 @SecurityRequirement(name = "jwtAuth")
 @Tag(name = "ProgressController", description = "This is a protected API. Send Authorization Header\n" +
         "Example:\n" +

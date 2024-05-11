@@ -21,7 +21,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/user")
-@CrossOrigin(origins = "http://localhost:63342", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
+@CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
 @SecurityRequirement(name = "jwtAuth")
 @Tag(name = "UserController", description = "This is a protected API. Send Authorization Header\n" +
         "Example:\n" +

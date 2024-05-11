@@ -73,7 +73,8 @@ public class WebSecurityConfig {
                                 .requestMatchers("/v3/api-docs/**",
                                         "/swagger-resources/**",
                                         "/swagger-resources",
-                                        "/swagger-ui/**").permitAll()
+                                        "/swagger-ui/**",
+                                        "/api/progress/**").permitAll()
                                 //Require authentication for all other endpoints
                                 .anyRequest().authenticated()
             )

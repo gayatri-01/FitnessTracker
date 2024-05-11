@@ -5,6 +5,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document("activities")
 @Getter
 @Setter
@@ -19,4 +21,5 @@ public class Activity {
     private int duration;
     private int steps;
     private double caloriesBurnt;
+    private Date createdTimestamp;
 }
