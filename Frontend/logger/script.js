@@ -5,7 +5,6 @@ const caloriesInput = document.getElementById('calories');
 const logButton = document.getElementById('log-btn');
 
 const nonNegativeIntegerPattern = /^(0|[1-9]\d*)$/;
-
 function toggleLogButton() {
     if (
         dateInput.value.trim() !== '' &&
@@ -29,14 +28,16 @@ caloriesInput.addEventListener('input', toggleLogButton);
 
 // Function to log entry using fetch API
 const token = sessionStorage.getItem("token");
+const username = sessionStorage.getItem("username");
 function logEntry() {
   const data = {
     date: dateInput.value,
     duration: parseInt(durationInput.value),
     steps: parseInt(stepsInput.value),
     caloriesBurnt: parseInt(caloriesInput.value),
+    username: username
   };
-  fetch('http://localhost:42000/api/activity', {
+  fetch("http://localhost:42000/api/activity", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +56,7 @@ function logEntry() {
 }
 
 logButton.addEventListener('click', function() {
-  if (!toggleLogButton()) {
+  if (toggleLogButton()) {
     return;
   }
   logEntry();

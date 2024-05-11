@@ -5,12 +5,10 @@ const positiveIntegerPattern = /^[1-9]\d*$/;
 
 function togglePlanButton() {
     const gender = document.querySelector('input[name="gender"]:checked');
-    console.log("plan button");
     if (
         weightInput.value.trim() !== '' &&
         positiveIntegerPattern.test(weightInput.value.trim()) && gender !== null
     ) {
-    console.log("plan button enabled");
         planButton.disabled = false;
     } else {
         planButton.disabled = true;
@@ -26,7 +24,9 @@ planButton.addEventListener('click', async function handleClick() {
   const weight = weightInput.value.trim();
   const gender = document.querySelector('input[name="gender"]:checked').value;
   const token = sessionStorage.getItem("token");
-  fetch("http://localhost:42000/api/workout/workoutPlan?gender=${gender}&weight=${weight}", {
+    fetch("http://localhost:42000/api/workout/workoutPlan?" + new URLSearchParams({
+    gender: gender,
+    weight: weight}), {
                  method: 'GET',
                  headers: {
                      'Content-Type': 'application/json',

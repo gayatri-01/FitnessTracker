@@ -27,7 +27,7 @@ public class ActivityService {
         activity.setDate(activityMap.get("date").toString());
         activity.setSteps((Integer) activityMap.get("steps"));
         activity.setDuration((Integer) activityMap.get("duration"));
-        activity.setCaloriesBurnt((Double) activityMap.get("caloriesBurnt"));
+        activity.setCaloriesBurnt((Integer) activityMap.get("caloriesBurnt"));
         activityRepository.saveActivity(activity);
         return Response.<String>builder().status(HttpStatus.OK.value()).message("Activity saved successfully").build();
     }

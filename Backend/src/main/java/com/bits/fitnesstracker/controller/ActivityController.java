@@ -20,7 +20,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("api/activity")
 @SecurityRequirement(name = "jwtAuth")
-@CrossOrigin(origins = "http://localhost:52000", methods = {RequestMethod.GET, RequestMethod.POST})
 @Tag(name = "ActivityController", description = "This is a protected API. Send Authorization Header\n" +
         "Example:\n" +
         "HeaderKey: \"Authorization\"\n" +
